@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dylan Garrett</title>
+    <link>https://dylan-garrett.com/</link>
+    <description>Recent content on Dylan Garrett</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© {year} Dylan Garrett</copyright>
+    <lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dylan-garrett.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Resume</title>
+      <link>https://dylan-garrett.com/resume/</link>
+      <pubDate>Sun, 19 Jul 2020 21:24:26 -0700</pubDate>
+      
+      <guid>https://dylan-garrett.com/resume/</guid>
+      <description>PDF</description>
+    </item>
+    
+    <item>
+      <title>birb.</title>
+      <link>https://dylan-garrett.com/projects/birb/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylan-garrett.com/projects/birb/</guid>
+      <description>Ludum Dare Submission
+Source 
+Play in an online Gameboy emulator!</description>
+    </item>
+    
+    <item>
+      <title>Audio Necklace</title>
+      <link>https://dylan-garrett.com/projects/audio-necklace/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylan-garrett.com/projects/audio-necklace/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Basic E-Reader</title>
+      <link>https://dylan-garrett.com/projects/basic-ereader/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylan-garrett.com/projects/basic-ereader/</guid>
+      <description>Source</description>
+    </item>
+    
+    <item>
+      <title>Keeb</title>
+      <link>https://dylan-garrett.com/projects/keeb/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylan-garrett.com/projects/keeb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tweeter</title>
+      <link>https://dylan-garrett.com/projects/tweeter/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylan-garrett.com/projects/tweeter/</guid>
+      <description>Source</description>
+    </item>
+    
+  </channel>
+</rss>
