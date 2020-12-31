@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year} Dylan Garrett</copyright>
-    <lastBuildDate>Wed, 30 Dec 2020 21:36:44 -0800</lastBuildDate><atom:link href="https://dylan-garrett.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Dec 2020 21:49:25 -0800</lastBuildDate><atom:link href="https://dylan-garrett.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Score Tracker</title>
+      <link>https://dylan-garrett.com/projects/score-tracker/</link>
+      <pubDate>Wed, 30 Dec 2020 21:49:25 -0800</pubDate>
+      
+      <guid>https://dylan-garrett.com/projects/score-tracker/</guid>
+      <description>Keep track of the score while you play board games, card games, or any other kind of game with Score Tracker.
+It&amp;rsquo;s a simple app, just add players, tap on a player, and add or subtract points.</description>
+    </item>
+    
     <item>
       <title>iOS App Support</title>
       <link>https://dylan-garrett.com/other/ios-app-support/</link>
