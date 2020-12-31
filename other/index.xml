@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year} Dylan Garrett</copyright>
-    <lastBuildDate>Wed, 30 Dec 2020 21:22:58 -0800</lastBuildDate><atom:link href="https://dylan-garrett.com/other/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Dec 2020 21:36:44 -0800</lastBuildDate><atom:link href="https://dylan-garrett.com/other/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iOS App Support</title>
+      <link>https://dylan-garrett.com/other/ios-app-support/</link>
+      <pubDate>Wed, 30 Dec 2020 21:36:44 -0800</pubDate>
+      
+      <guid>https://dylan-garrett.com/other/ios-app-support/</guid>
+      <description>I don&amp;rsquo;t officially provide support for my free apps. They are provided without warranty and are intended for use as-is. But you may contact me at app-support@dylan-garrett.com.
+THE SOFTWARE IS PROVIDED &amp;ldquo;AS IS&amp;rdquo;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</description>
+    </item>
+    
     <item>
       <title>Score Tracker Privacy Policy</title>
       <link>https://dylan-garrett.com/other/score-tracker-privacy-policy/</link>
