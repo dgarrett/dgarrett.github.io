@@ -118,6 +118,43 @@
    target="_blank" rel="noreferrer noopener" 
 >Source <i class="fa fa-github"></i></a>
 </p>
+<p>Send messages over LoRa to a thermal printer</p>
+<h2 id="what-you-need">What you need<a class="anchor" href="#what-you-need">#</a></h2>
+<ul>
+<li>2x ESP32 Development Boards with LoRa (ex <a href="https://smile.amazon.com/gp/product/B076MTF8NW/">https://smile.amazon.com/gp/product/B076MTF8NW/</a>)
+<ul>
+<li>One will be used as the Sender</li>
+<li>One will be used as the receiver</li>
+</ul>
+</li>
+<li>Serial Thermal Printer and paper (ex <a href="https://www.adafruit.com/product/597">https://www.adafruit.com/product/597</a>)</li>
+</ul>
+<h2 id="wiring-instructions-for-sender-esp32-board">Wiring Instructions for Sender ESP32 board<a class="anchor" href="#wiring-instructions-for-sender-esp32-board">#</a></h2>
+<p>Just plug into USB for power</p>
+<h2 id="wiring-instructions-for-receiver-esp32-board">Wiring Instructions for Receiver ESP32 board<a class="anchor" href="#wiring-instructions-for-receiver-esp32-board">#</a></h2>
+<p>One of your boards will be the receiver, so it needs to be connected to the thermal printer.</p>
+<p>Follow Adafruit directions for connecting a thermal printer: <a href="https://learn.adafruit.com/mini-thermal-receipt-printer/microcontroller">https://learn.adafruit.com/mini-thermal-receipt-printer/microcontroller</a></p>
+<ul>
+<li>Red -&gt; 5V</li>
+<li>Black -&gt; GND</li>
+<li>Blue -&gt; Pin 17 (U2TXD)</li>
+<li>Green -&gt; Pin 16 (U2RXD)</li>
+<li>If your thermal printer has an extra DTR connection (Yellow), connect it to pin 13. Otherwise, modify the <code>Adafruit_Thermal printer(&amp;Serial2, 13);</code> line in <code>BirbTweeter_Receiver.ino</code> and change it to <code>Adafruit_Thermal printer(&amp;Serial2);</code></li>
+</ul>
+<h2 id="software-setup">Software Setup<a class="anchor" href="#software-setup">#</a></h2>
+<ol>
+<li>Set up the Heltec ESP32 Arduino Core: <a href="https://docs.heltec.cn/#/en/user_manual/how_to_install_esp32_Arduino">https://docs.heltec.cn/#/en/user_manual/how_to_install_esp32_Arduino</a></li>
+<li>In the Arduino IDE, select Tools -&gt; Board and Select &ldquo;WIFI_LoRa_32_V2&rdquo;</li>
+<li>In the Arduino IDE, select Tools -&gt; Manage Libraries and install the library: Adafruit Thermal Printer Library</li>
+<li>Deploy BirbTweeter_Sender to one of the ESP32 boards</li>
+<li>Deploy BirbTweeter_Receiver to the other board that is connected to the thermal printer</li>
+<li>Power on both boards.</li>
+<li>On a computer or phone, connect to the &ldquo;BirbTweeterSender&rdquo; WiFi hotspot that is hosted by the Sender</li>
+<li>Open a web browser and navigate to 192.168.4.1</li>
+<li>Enter a message and click Send</li>
+<li>The Sender will send the message to the Receiver over LoRa and the Receiver will print it.</li>
+</ol>
+<p>Note that there is currently no retry, so the message may fail to be delivered.</p>
 
 
               

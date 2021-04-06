@@ -118,6 +118,69 @@
    target="_blank" rel="noreferrer noopener" 
 >Source <i class="fa fa-github"></i></a>
 </p>
+<h2 id="what-you-need">What you need<a class="anchor" href="#what-you-need">#</a></h2>
+<ul>
+<li>WaveShare EPaper Display (ex 1.54in 200x200 <a href="https://smile.amazon.com/gp/product/B07DH6K1VQ/">https://smile.amazon.com/gp/product/B07DH6K1VQ/</a>)</li>
+<li>ESP32 Development Board (ex <a href="https://www.adafruit.com/product/3405">https://www.adafruit.com/product/3405</a> or <a href="https://smile.amazon.com/gp/product/B0718T232Z/">https://smile.amazon.com/gp/product/B0718T232Z/</a>)</li>
+<li>4 SPST switches</li>
+<li>Breadboard</li>
+<li>Optional: Basic USB logic analyzer (<a href="https://smile.amazon.com/gp/product/B077LSG5P2/">https://smile.amazon.com/gp/product/B077LSG5P2/</a>)</li>
+</ul>
+<h2 id="wiring-instructions">Wiring Instructions<a class="anchor" href="#wiring-instructions">#</a></h2>
+<p>The specific wiring is going to be different depending on what board you&rsquo;re using. These instructions are for the Adafruit HUZZAH32</p>
+<p>Connect the following:</p>
+<ul>
+<li>SDI/SCK -&gt; MOSI</li>
+<li>SCK/SCLK -&gt; SCK</li>
+<li>CS -&gt; 15</li>
+<li>DC -&gt; 33</li>
+<li>RST/Reset -&gt; 27</li>
+<li>Busy -&gt; 32</li>
+</ul>
+<p>If you want to use different pins, you can change the pin configurations for <code>GxIO_Class</code> and <code>GxEPD_Class</code> in BasicEPaperReader.ino</p>
+<p>You might also try switching the <code>VSPI</code> option on the <code>SPIClass</code> object to <code>HSPI</code>. <code>VSPI</code> and <code>HSPI</code> are the two SPI interfaces exposed by the ESP32.</p>
+<p>For each of the SPST switches, connect one side to ground and one side to pins: 14, 21, 22, 23</p>
+<p>We&rsquo;ll use the ESP32&rsquo;s internal pullup resistors, so no external resistors are needed.</p>
+<h2 id="software-setup">Software Setup<a class="anchor" href="#software-setup">#</a></h2>
+<ol>
+<li>Install Arduino IDE <a href="https://www.arduino.cc/en/Main/Software">https://www.arduino.cc/en/Main/Software</a></li>
+<li>Install Arduino Core for the ESP32 <a href="https://github.com/espressif/arduino-esp32">https://github.com/espressif/arduino-esp32</a></li>
+<li>In the Arduino IDE, select Tools -&gt; Manage Libraries and install the following libraries: ArduinoHttpClient, Adafruit GFX Library, ArdunoJSON</li>
+<li>Install GxEPD manually
+<ol>
+<li>Download the library as a zip file <a href="https://github.com/ZinggJM/GxEPD/archive/master.zip">https://github.com/ZinggJM/GxEPD/archive/master.zip</a></li>
+<li>In Arduino IDE, select Sketch -&gt; Include Library -&gt; Add .ZIP Library -&gt; Select the GxEPD zip file</li>
+</ol>
+</li>
+<li>Get a Pocket API key
+<ol>
+<li>Create a new Pocket API app: <a href="https://getpocket.com/developer/">https://getpocket.com/developer/</a></li>
+<li>At the end up the app creation, copy the consumer key and access key into <code>POCKET_CONSUMER_KEY</code> and <code>POCKET_ACCESS_KEY</code> in Keys.h</li>
+</ol>
+</li>
+<li>Get an Aylien Text Analysis API key
+<ol>
+<li>Create an account here: <a href="https://developer.aylien.com/signup">https://developer.aylien.com/signup</a></li>
+<li>Create an app and get an application ID and an application key. Copy those into <code>AYLIEN_APPLICATION_ID</code> and <code>AYLIEN_APPLICATION_KEY</code> in Keys.h</li>
+</ol>
+</li>
+<li>Set up your WiFi
+<ol>
+<li>Put your WiFi hotspot&rsquo;s name in <code>WIFI_AP_NAME</code> in Keys.h</li>
+<li>Put your WiFi hotspot&rsquo;s password in <code>WIFI_PASSWORD</code> in Keys.h</li>
+</ol>
+</li>
+<li>Click Run. Watch the EPaper display update with the 3 most recent articles saved to your Pocket account.</li>
+</ol>
+<h2 id="using-a-digital-logic-analyzer-to-see-whats-happening">Using a Digital Logic Analyzer to see what&rsquo;s happening<a class="anchor" href="#using-a-digital-logic-analyzer-to-see-whats-happening">#</a></h2>
+<ol>
+<li>Download the supported software for your logic analyzer. Ex: <a href="https://www.saleae.com/downloads/">https://www.saleae.com/downloads/</a></li>
+<li>Connect your logic analyzer&rsquo;s ground lead to the circuit&rsquo;s ground</li>
+<li>Connect other analyzer channels to the other SPI connections to the EPaper display. The important ones are CS, CLK, and DIN.</li>
+<li>Add an Analyzer configuration for SPI. Set MOSI to the channel connected to the EPaper display&rsquo;s DIN pin; set MISO to None; set Clock to the CLK pin; set Enable to the CS pin. Other options should remain at their defaults.</li>
+<li>Select the &ldquo;Setup Trigger&rdquo; button on the channel connected to the CS pin. Set it to Trigger on Falling Edge.</li>
+<li>Start the logic analyzer. Click a button on the BasicEPaperReader setup and let the logic analyzer capture the SPI communication sent to the EPaper display to change what is being displayed.</li>
+</ol>
 
 
               

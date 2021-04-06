@@ -23,7 +23,7 @@
       <pubDate>Wed, 30 Dec 2020 21:49:25 -0800</pubDate>
       
       <guid>https://dylan-garrett.com/projects/score-tracker/</guid>
-      <description>Keep track of the score while you play board games, card games, or any other kind of game with Score Tracker.
+      <description>Download for  Apple Watch Keep track of the score while you play board games, card games, or any other kind of game with Score Tracker.
 It&amp;rsquo;s a simple app, just add players, tap on a player, and add or subtract points.</description>
     </item>
     
@@ -82,7 +82,9 @@ If you choose to use my Service, then you agree to the collection and use of inf
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://dylan-garrett.com/projects/basic-ereader/</guid>
-      <description>Source  </description>
+      <description>Source  What you need  WaveShare EPaper Display (ex 1.54in 200x200 https://smile.amazon.com/gp/product/B07DH6K1VQ/) ESP32 Development Board (ex https://www.adafruit.com/product/3405 or https://smile.amazon.com/gp/product/B0718T232Z/) 4 SPST switches Breadboard Optional: Basic USB logic analyzer (https://smile.amazon.com/gp/product/B077LSG5P2/)  Wiring Instructions The specific wiring is going to be different depending on what board you&amp;rsquo;re using. These instructions are for the Adafruit HUZZAH32
+Connect the following:
+ SDI/SCK -&amp;gt; MOSI SCK/SCLK -&amp;gt; SCK CS -&amp;gt; 15 DC -&amp;gt; 33 RST/Reset -&amp;gt; 27 Busy -&amp;gt; 32  If you want to use different pins, you can change the pin configurations for GxIO_Class and GxEPD_Class in BasicEPaperReader.</description>
     </item>
     
     <item>
@@ -100,7 +102,9 @@ If you choose to use my Service, then you agree to the collection and use of inf
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://dylan-garrett.com/projects/tweeter/</guid>
-      <description>Source  </description>
+      <description>Source  Send messages over LoRa to a thermal printer
+What you need  2x ESP32 Development Boards with LoRa (ex https://smile.amazon.com/gp/product/B076MTF8NW/)  One will be used as the Sender One will be used as the receiver   Serial Thermal Printer and paper (ex https://www.adafruit.com/product/597)  Wiring Instructions for Sender ESP32 board Just plug into USB for power
+Wiring Instructions for Receiver ESP32 board One of your boards will be the receiver, so it needs to be connected to the thermal printer.</description>
     </item>
     
   </channel>
