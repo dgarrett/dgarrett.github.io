@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year} Dylan Garrett</copyright>
-    <lastBuildDate>Wed, 30 Dec 2020 21:49:25 -0800</lastBuildDate><atom:link href="https://dylan-garrett.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://dylan-garrett.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Doom Fire in LÖVE/lua</title>
+      <link>https://dylan-garrett.com/blog/doom-fire-love2d/</link>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylan-garrett.com/blog/doom-fire-love2d/</guid>
+      <description>This weekend I read Fabien Sanglard&amp;rsquo;s post describing how the fire effect was implemented in Doom on the Playstation 1 and I figured this was a good chance to implement a small toy program in LÖVE. Here&amp;rsquo;s an iterative tutorial, written for beginners, to demonstrate implementing this effect using Lua in the LÖVE environment. If you&amp;rsquo;re already experienced with Lua or programming in general then go read Fabien&amp;rsquo;s post. It&amp;rsquo;s much more succinct.</description>
+    </item>
+    
     <item>
       <title>Score Tracker</title>
       <link>https://dylan-garrett.com/projects/score-tracker/</link>
@@ -46,7 +55,7 @@ If you choose to use my Service, then you agree to the collection and use of inf
       <pubDate>Sun, 19 Jul 2020 21:24:26 -0700</pubDate>
       
       <guid>https://dylan-garrett.com/resume/</guid>
-      <description>PDF</description>
+      <description> PDF </description>
     </item>
     
     <item>
@@ -55,9 +64,7 @@ If you choose to use my Service, then you agree to the collection and use of inf
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://dylan-garrett.com/projects/birb/</guid>
-      <description>Ludum Dare Submission
-Source 
-Play in an online Gameboy emulator!</description>
+      <description>Ludum Dare Submission Source  Play in an online Gameboy emulator! </description>
     </item>
     
     <item>
@@ -75,7 +82,7 @@ Play in an online Gameboy emulator!</description>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://dylan-garrett.com/projects/basic-ereader/</guid>
-      <description>Source</description>
+      <description>Source  </description>
     </item>
     
     <item>
@@ -93,7 +100,7 @@ Play in an online Gameboy emulator!</description>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://dylan-garrett.com/projects/tweeter/</guid>
-      <description>Source</description>
+      <description>Source  </description>
     </item>
     
   </channel>

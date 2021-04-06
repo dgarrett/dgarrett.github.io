@@ -6,6 +6,34 @@
     <description>Recent content in Tags on Dylan Garrett</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© {year} Dylan Garrett</copyright><atom:link href="https://dylan-garrett.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© {year} Dylan Garrett</copyright>
+    <lastBuildDate>Mon, 05 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://dylan-garrett.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>love2d</title>
+      <link>https://dylan-garrett.com/tags/love2d/</link>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylan-garrett.com/tags/love2d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lua</title>
+      <link>https://dylan-garrett.com/tags/lua/</link>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylan-garrett.com/tags/lua/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tutorial</title>
+      <link>https://dylan-garrett.com/tags/tutorial/</link>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylan-garrett.com/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

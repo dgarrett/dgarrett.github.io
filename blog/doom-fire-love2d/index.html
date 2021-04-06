@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <title>Doom Fire in LÖVE/lua | Dylan Garrett</title>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="Iterative tutorial for implementing Doom fire effect in Love2D Lua">
+  <meta name="keywords" content="tutorial , coding , love2d , lua , beginner , game , programming">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Doom Fire in LÖVE/lua" />
+  <meta name="twitter:description" content="Iterative tutorial for implementing Doom fire effect in Love2D Lua"/>
+  <meta name="twitter:site" content="@dygar_" />
+  <meta name="twitter:creator" content="https://twitter.com/dygar_" />
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/post.min.a4712d0376acf8c0491ef2b98baf2f9287629f027a654e15b0ca42433957f47d.css" integrity="sha256-pHEtA3as&#43;MBJHvK5i68vkodinwJ6ZU4VsMpCQzlX9H0="/>
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/dylan-garrett.com\/"
+      },
+      "articleSection" : "blog",
+      "name" : "Doom Fire in LÖVE\/lua",
+      "headline" : "Doom Fire in LÖVE\/lua",
+      "description" : "Iterative tutorial for implementing Doom fire effect in Love2D Lua",
+      "inLanguage" : "en-US",
+      "author" : "",
+      "creator" : "",
+      "publisher": "",
+      "accountablePerson" : "",
+      "copyrightHolder" : "",
+      "copyrightYear" : "2021",
+      "datePublished": "2021-04-05 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2021-04-05 00:00:00 \u002b0000 UTC",
+      "url" : "https:\/\/dylan-garrett.com\/blog\/doom-fire-love2d\/",
+      "wordCount" : "2869",
+      "keywords" : ["tutorial", "coding", "love2d", "lua", "beginner", "game", "programming", "Blog"]
+    }
+  
+  </script>
+</head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" id="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/">about</a>
+      </li>
+    
+      <li>
+        <a  class="active"
+         href="/blog">blog</a>
+      </li>
+    
+      <li>
+        <a  href="/projects">projects</a>
+      </li>
+    
+      <li>
+        <a  href="/resume">resume</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">Doom Fire in LÖVE/lua</h1>
+            <time datetime="2021-04-05 00:00:00 &#43;0000 UTC" class="post__date"
+            >Apr 5 2021</time>
+          </header>
+          <article class="post__content">
+              
+<p>This weekend I read Fabien Sanglard&rsquo;s post describing <a href="https://fabiensanglard.net/doom_fire_psx/index.html" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>how the fire effect was
+implemented in Doom on the Playstation
+1</a>
+ and I figured this was a
+good chance to implement a small toy program in <a href="https://love2d.org" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>LÖVE.</a>
+</p>
+<p>Here&rsquo;s an iterative tutorial, written for beginners, to demonstrate implementing
+this effect using Lua in the <a href="https://love2d.org" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>LÖVE</a>
+ environment. If you&rsquo;re
+already experienced with Lua or programming in general then go read Fabien&rsquo;s
+post. It&rsquo;s much more succinct.</p>
+<p><img src="/doom-fire-love2d/randomness-x.gif" alt="animated fire from the bottom up and left and right"></p>
+<h2 id="löve-program-layout">LÖVE program layout<a class="anchor" href="#löve-program-layout">#</a></h2>
+<p>In LÖVE, a program consists of one or more <code>.lua</code> files in a folder. The most
+important file is <code>main.lua</code> and it needs to contain the following three
+functions:</p>
+<pre><code class="language-lua">function love.load()
+end
+
+function love.draw()
+end
+
+function love.update(dt)
+end
+</code></pre>
+<p>Make a folder with a file named <code>main.lua</code> with the above three functions, then
+open that folder in LÖVE and you&rsquo;ll see&hellip; nothing. Well, not nothing. You&rsquo;ll
+see a black window, which means you&rsquo;ve successfully run a game that does
+nothing.</p>
+<h2 id="drawing-a-pixel-grid">Drawing a pixel grid<a class="anchor" href="#drawing-a-pixel-grid">#</a></h2>
+<p>LÖVE is optimized for modern hardware and a simpler development experience, so
+it operates mostly on objects and images instead of a raw pixel frame buffer.
+This is usually great, but we just want to set pixels to specific colors. So
+let&rsquo;s start out by rendering a grid of rectangular &ldquo;pixels&rdquo;.</p>
+<p>First off, we need to define a few constant numbers to use in a few places. Two
+of these will be named <code>WIDTH</code> and <code>HEIGHT</code> to represent the number of pixels to
+draw, and two more will be named <code>PWIDTH</code> and <code>PHEIGHT</code> to represent the size of
+each of our fake pixels.</p>
+<h3 id="global-variables">Global variables<a class="anchor" href="#global-variables">#</a></h3>
+<p>Define these constants at the top of <code>main.lua</code>:</p>
+<pre><code class="language-lua">WIDTH = 100
+HEIGHT = 100
+PWIDTH = love.graphics.getWidth() / WIDTH
+PHEIGHT = love.graphics.getHeight() / HEIGHT
+</code></pre>
+<p>We need one more global variable, but this one is something that will be
+modified a few times. Add an empty table named <code>pixels</code> under the constants.</p>
+<pre><code class="language-lua">pixels = {}
+</code></pre>
+<h3 id="generating-color-data">Generating color data<a class="anchor" href="#generating-color-data">#</a></h3>
+<p>Let&rsquo;s fill out this table with some random colors to start. Do this in the
+<code>love.load()</code> function. This function will be run once when our game is started,
+so it&rsquo;s good for loading or generating data.</p>
+<pre><code class="language-lua">function love.load()
+    for y = 1, HEIGHT do
+        pixels[y] = {}
+        for x = 1, WIDTH do
+            pixels[y][x] = {love.math.random(),love.math.random(),love.math.random()}
+        end
+    end
+end
+</code></pre>
+<p>From the top, this function runs a <code>for</code> loop from 1 to the height of our window
+in our fake pixels. It adds a new sub-table for each of these horizontal lines
+and then runs an inner <code>for</code> loop from 1 to the width of our window in our fake
+pixels. At this point, it can add one more sub-table representing the
+<a href="https://en.wikipedia.org/wiki/RGB_color_model" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>red/green/blue</a>
+ values of a
+random color for that pixel.</p>
+<h3 id="drawing-pixels">Drawing pixels<a class="anchor" href="#drawing-pixels">#</a></h3>
+<p>Finally, we can draw the pixels generated in the above loop. Fill out the
+<code>love.draw()</code> function, which is run on every frame and describes how to draw
+that frame.</p>
+<pre><code class="language-lua">function love.draw()
+    for y = 1, HEIGHT do
+        for x = 1, WIDTH do
+            color = pixels[y][x]
+            love.graphics.setColor(color[1], color[2], color[3], 1)
+            love.graphics.rectangle('fill', (x-1) * PWIDTH, (y-1) * PHEIGHT, PWIDTH, PHEIGHT)
+        end
+    end
+end
+</code></pre>
+<p>This function has the same nested <code>for</code> loops to loop over every pixel. The code
+then sets the current RGB color to the color in the <code>pixels</code> table at these
+coordinates. We get the red, green, and blue values out by indexing into the
+color at indices 1, 2, and 3. This might look strange if you&rsquo;re used to other
+programming languages that start array offsets at index 0. Lua starts with index
+1.</p>
+<p>After setting the current drawing color, the code draws a pixel, or rather, a
+rectangle that is used to represent a fake pixel. The code gets the real
+coordinates on the window by multiplying the x,y coordinates by the pixel size
+(after first subtracting 1 to get back to a 0-based index). Then it draws a
+rectangle of size <code>PWIDTH * PHEIGHT</code>.</p>
+<p>It&rsquo;s important to note that the x,y coordinates of the window start at (0,0) in
+the top left and extend downward and to the right. This is different from graph
+coordinates in math, but is typical in graphics programming.</p>
+<h3 id="result">Result<a class="anchor" href="#result">#</a></h3>
+<p>
+<details>
+<summary>Complete code</summary>
+<pre><code class="language-lua">WIDTH = 100
+HEIGHT = 100
+PWIDTH = love.graphics.getWidth() / WIDTH
+PHEIGHT = love.graphics.getHeight() / HEIGHT
+pixels = {}
+
+function love.load()
+    for y = 1, HEIGHT do
+        pixels[y] = {}
+        for x = 1, WIDTH do
+            pixels[y][x] = {love.math.random(),love.math.random(),love.math.random()}
+        end
+    end
+end
+
+function love.draw()
+    for y = 1, HEIGHT do
+        for x = 1, WIDTH do
+            color = pixels[y][x]
+            love.graphics.setColor(color[1], color[2], color[3], 1)
+            love.graphics.rectangle('fill', (x-1) * PWIDTH, (y-1) * PHEIGHT, PWIDTH, PHEIGHT)
+        end
+    end
+end
+
+function love.update(dt)
+end
+</code></pre>
+</details>
+</p>
+<p>We don&rsquo;t need to fill out <code>love.update()</code> yet, because the program isn&rsquo;t going
+to change the pixels right now. Open your folder in LÖVE to run it and check out
+the crazy pattern.</p>
+<p><img src="/doom-fire-love2d/random.png" alt="random colors"></p>
+<h2 id="color-palette">Color palette<a class="anchor" href="#color-palette">#</a></h2>
+<p>Random colors look interesting, but we need to use a palette for the fire
+effect. A palette is a set of colors that our program will choose from for each
+pixel.</p>
+<h3 id="palette-table">Palette table<a class="anchor" href="#palette-table">#</a></h3>
+<p>Up at the top of <code>main.lua</code>, add the palette table. Each of these entries is a
+sub-table of red, green, and blue values from 0-255. These colors range from
+black at the start, through a range of reds, and finally white at the end.</p>
+<pre><code class="language-lua">palette = {
+    {7,7,7},
+    {28,8,8},
+    {43,17,9},
+    {65,19,11},
+    {80,28,13},
+    {95,36,16},
+    {110,38,18},
+    {133,47,22},
+    {148,55,25},
+    {163,70,30},
+    {178,79,33},
+    {185,80,34},
+    {208,89,39},
+    {208,96,40},
+    {208,96,40},
+    {201,102,41},
+    {202,109,45},
+    {195,115,45},
+    {196,123,47},
+    {197,130,49},
+    {198,138,53},
+    {190,137,53},
+    {191,145,54},
+    {192,152,60},
+    {186,160,61},
+    {186,160,61},
+    {187,167,67},
+    {187,167,67},
+    {189,175,73},
+    {182,175,72},
+    {183,182,74},
+    {183,182,79},
+    {207,206,124},
+    {223,223,166},
+    {239,239,203},
+    {255,255,255}
+}
+</code></pre>
+<h3 id="switching-pixels-to-palette-values">Switching pixels to palette values<a class="anchor" href="#switching-pixels-to-palette-values">#</a></h3>
+<p>Let&rsquo;s make some changes to how pixels are stored so that the code references the
+RGB values in the palette instead of a different RGB value per pixel.</p>
+<p>In <code>love.load()</code>, change</p>
+<pre><code class="language-lua">pixels[y][x] = {love.math.random(),love.math.random(),love.math.random()}
+</code></pre>
+<p>to</p>
+<pre><code class="language-lua">pixels[y][x] = math.floor(love.math.random() * (table.maxn(palette) - 1) + 1)
+</code></pre>
+<p><code>math.random()</code> generates a decimal value from 0 to 1, and <code>table.maxn()</code> gives
+the maximum index of the <code>palette</code> table (36 because there are 36 palette
+entries). We want a random value from 1 to 36, so we can multiply the random
+number by 35 to get a number from 0 to 35, then add 1.</p>
+<p>There&rsquo;s one more issue, which is that LÖVE expects RGB values to be decimals
+from 0 to 1, but the palette table has whole numbers from 0-255. Add one more
+chunk of code to <code>love.load()</code> to convert our palette values to the correct
+range.</p>
+<pre><code class="language-lua">for i, v in ipairs(palette) do
+    palette[i] = {v[1]/255, v[2]/255, v[3]/255}
+end
+</code></pre>
+<p>This is a different form of a <code>for</code> loop. Inside this <code>for</code> loop, <code>i</code> refers to
+the current index out of all of the indices in <code>palette</code>, and <code>v</code> refers to the
+current value.</p>
+<h3 id="drawing-with-the-palette">Drawing with the palette<a class="anchor" href="#drawing-with-the-palette">#</a></h3>
+<p>Now we need to draw pixels by looking up their color from the palette. Replace
+the drawing code inside the loops in <code>love.draw()</code> with:</p>
+<pre><code class="language-lua">color = pixels[y][x]
+love.graphics.setColor(palette[color][1], palette[color][2], palette[color][3], 1)
+love.graphics.rectangle('fill', (x-1) * PWIDTH, (y-1) * PHEIGHT, PWIDTH, PHEIGHT)
+</code></pre>
+<p>This is almost the same as before, but with a level of indirection to look up
+the RGB value from the palette.</p>
+<h3 id="result-1">Result<a class="anchor" href="#result-1">#</a></h3>
+<p>
+<details>
+<summary>Complete code</summary>
+<pre><code class="language-lua">WIDTH = 100
+HEIGHT = 100
+PWIDTH = love.graphics.getWidth() / WIDTH
+PHEIGHT = love.graphics.getHeight() / HEIGHT
+pixels = {}
+
+palette = {
+    {7,7,7},
+    {28,8,8},
+    {43,17,9},
+    {65,19,11},
+    {80,28,13},
+    {95,36,16},
+    {110,38,18},
+    {133,47,22},
+    {148,55,25},
+    {163,70,30},
+    {178,79,33},
+    {185,80,34},
+    {208,89,39},
+    {208,96,40},
+    {208,96,40},
+    {201,102,41},
+    {202,109,45},
+    {195,115,45},
+    {196,123,47},
+    {197,130,49},
+    {198,138,53},
+    {190,137,53},
+    {191,145,54},
+    {192,152,60},
+    {186,160,61},
+    {186,160,61},
+    {187,167,67},
+    {187,167,67},
+    {189,175,73},
+    {182,175,72},
+    {183,182,74},
+    {183,182,79},
+    {207,206,124},
+    {223,223,166},
+    {239,239,203},
+    {255,255,255}
+}
+
+function love.load()
+    for y = 0, HEIGHT do
+        pixels[y] = {}
+        for x = 0, WIDTH do
+            pixels[y][x] = math.floor(love.math.random() * (table.maxn(palette) - 1) + 1)
+        end
+    end
+
+    for i, v in ipairs(palette) do
+        -- convert palette from &quot;bytes&quot; to floats
+        palette[i] = {v[1]/255, v[2]/255, v[3]/255}
+    end
+end
+
+function love.draw()
+    for y = 1, HEIGHT do
+        for x = 1, WIDTH do
+            color = pixels[y][x]
+            love.graphics.setColor(palette[color][1], palette[color][2], palette[color][3], 1)
+            love.graphics.rectangle('fill', (x-1) * PWIDTH, (y-1) * PHEIGHT, PWIDTH, PHEIGHT)
+        end
+    end
+end
+
+function love.update(dt)
+end
+</code></pre>
+</details>
+</p>
+<p>With these changes we get similar random noise, but with colors selected from
+our black-red-white palette.</p>
+<p><img src="/doom-fire-love2d/random-palette.png" alt="random colors from black to red to white"></p>
+<h2 id="basic-fire">Basic fire<a class="anchor" href="#basic-fire">#</a></h2>
+<p>Alright, enough with the random noise. Let&rsquo;s do something that looks more like fire.</p>
+<h3 id="starting-state">Starting state<a class="anchor" href="#starting-state">#</a></h3>
+<p>First, let&rsquo;s correct the starting state of our pixels. The screen needs to start
+all black, except for one white line at the bottom. That white line will serve
+as the generator of the fire.</p>
+<p>In <code>love.load()</code> change</p>
+<pre><code class="language-lua">pixels[y][x] = math.floor(love.math.random() * (table.maxn(palette) - 1) + 1)
+</code></pre>
+<p>to the simpler</p>
+<pre><code class="language-lua">pixels[y][x] = 1
+</code></pre>
+<p>This sets all pixels to the first value of our palette, black.</p>
+<p>Then add this chunk of code to the bottom of <code>love.load()</code>:</p>
+<pre><code class="language-lua">for x = 1, WIDTH do
+    pixels[HEIGHT][x] = table.maxn(palette)
+end
+</code></pre>
+<p>This sets the last (bottom) line of pixels to white, the last value of our
+palette.</p>
+<h3 id="propagate-fire">Propagate fire<a class="anchor" href="#propagate-fire">#</a></h3>
+<p>Now we can implement the <code>doFire()</code> and <code>spreadFire()</code> methods that Fabien
+described in his blog.</p>
+<p><code>doFire()</code> is simple. It just iterates over every pixel, except for the top
+line, and runs <code>spreadFire()</code> on that pixel.</p>
+<pre><code class="language-lua">function doFire()
+    for y = 2, HEIGHT do
+        for x = 1, WIDTH do
+            spreadFire(x, y)
+        end
+    end
+end
+</code></pre>
+<p><code>spreadFire()</code> is also surprisingly simple. It just propagates the current pixel
+up to the pixel above it, subtracting one from the palette index so that the new
+pixel moves one step along the palette.</p>
+<pre><code class="language-lua">function spreadFire(x,y)
+    pixels[y-1][x] = math.max(1, pixels[y][x] - 1)
+end
+</code></pre>
+<p>Then just call <code>doFire()</code> from <code>love.update()</code>. This will update the state of
+the fire on every frame.</p>
+<pre><code class="language-lua">function love.update(dt)
+    doFire()
+end
+</code></pre>
+<h3 id="result-2">Result<a class="anchor" href="#result-2">#</a></h3>
+<p>
+<details>
+<summary>Complete code</summary>
+<pre><code class="language-lua">WIDTH = 100
+HEIGHT = 100
+PWIDTH = love.graphics.getWidth() / WIDTH
+PHEIGHT = love.graphics.getHeight() / HEIGHT
+pixels = {}
+
+palette = {
+    {7,7,7},
+    {28,8,8},
+    {43,17,9},
+    {65,19,11},
+    {80,28,13},
+    {95,36,16},
+    {110,38,18},
+    {133,47,22},
+    {148,55,25},
+    {163,70,30},
+    {178,79,33},
+    {185,80,34},
+    {208,89,39},
+    {208,96,40},
+    {208,96,40},
+    {201,102,41},
+    {202,109,45},
+    {195,115,45},
+    {196,123,47},
+    {197,130,49},
+    {198,138,53},
+    {190,137,53},
+    {191,145,54},
+    {192,152,60},
+    {186,160,61},
+    {186,160,61},
+    {187,167,67},
+    {187,167,67},
+    {189,175,73},
+    {182,175,72},
+    {183,182,74},
+    {183,182,79},
+    {207,206,124},
+    {223,223,166},
+    {239,239,203},
+    {255,255,255}
+}
+
+function love.load()
+    for y = 1, HEIGHT do
+        pixels[y] = {}
+        for x = 1, WIDTH do
+            -- init screen to black
+            pixels[y][x] = 1
+        end
+    end
+
+    for x = 1, WIDTH do
+        -- bottom pixels start at white
+        pixels[HEIGHT][x] = table.maxn(palette)
+    end
+
+    for i, v in ipairs(palette) do
+        -- convert palette from &quot;bytes&quot; to floats
+        palette[i] = {v[1]/255, v[2]/255, v[3]/255}
+    end
+end
+
+function love.draw()
+    for y = 1, HEIGHT do
+        for x = 1, WIDTH do
+            color = pixels[y][x]
+            love.graphics.setColor(palette[color][1], palette[color][2], palette[color][3], 1)
+            love.graphics.rectangle('fill', (x-1) * PWIDTH, (y-1) * PHEIGHT - 1, PWIDTH, PHEIGHT)
+        end
+    end
+end
+
+function doFire()
+    for y = 2, HEIGHT do
+        for x = 1, WIDTH do
+            spreadFire(x, y)
+        end
+    end
+end
+
+function spreadFire(x,y)
+    pixels[y-1][x] = math.max(1, pixels[y][x] - 1)
+end
+
+function love.update(dt)
+    doFire()
+end
+</code></pre>
+</details>
+</p>
+<p>This gives us a nice, though static, gradient along our palette.</p>
+<p><img src="/doom-fire-love2d/gradient.png" alt="gradient from white to red to black"></p>
+<h2 id="simple-randomness">Simple randomness<a class="anchor" href="#simple-randomness">#</a></h2>
+<p>A perfect static fire is boring, so let&rsquo;s add some randomness. We&rsquo;ll start out
+by just adding randomness along the Y-axis.</p>
+<p>Modify <code>spreadFire()</code>:</p>
+<pre><code class="language-lua">function spreadFire(x,y)
+    rand = math.floor(math.random() + 0.5)
+    pixels[y-1][x] = math.max(1, pixels[y][x] - rand)
+end
+</code></pre>
+<p>First this code randomly gets either 0 or 1. Adding 0.5 and then flooring the
+number effectively rounds it to the nearest whole number, since Lua doesn&rsquo;t have
+a built-in function to round numbers.</p>
+<p>Then <code>spreadFire()</code> subtracts this random 0 or 1 from the pixel value, using
+<code>math.max()</code> to ensure it never goes below the minimum valid color index of 1.</p>
+<h3 id="result-3">Result<a class="anchor" href="#result-3">#</a></h3>
+<p>
+<details>
+<summary>Complete code</summary>
+<pre><code class="language-lua">WIDTH = 100
+HEIGHT = 100
+PWIDTH = love.graphics.getWidth() / WIDTH
+PHEIGHT = love.graphics.getHeight() / HEIGHT
+pixels = {}
+
+palette = {
+    {7,7,7},
+    {28,8,8},
+    {43,17,9},
+    {65,19,11},
+    {80,28,13},
+    {95,36,16},
+    {110,38,18},
+    {133,47,22},
+    {148,55,25},
+    {163,70,30},
+    {178,79,33},
+    {185,80,34},
+    {208,89,39},
+    {208,96,40},
+    {208,96,40},
+    {201,102,41},
+    {202,109,45},
+    {195,115,45},
+    {196,123,47},
+    {197,130,49},
+    {198,138,53},
+    {190,137,53},
+    {191,145,54},
+    {192,152,60},
+    {186,160,61},
+    {186,160,61},
+    {187,167,67},
+    {187,167,67},
+    {189,175,73},
+    {182,175,72},
+    {183,182,74},
+    {183,182,79},
+    {207,206,124},
+    {223,223,166},
+    {239,239,203},
+    {255,255,255}
+}
+
+function love.load()
+    for y = 1, HEIGHT do
+        pixels[y] = {}
+        for x = 1, WIDTH do
+            -- init screen to black
+            pixels[y][x] = 1
+        end
+    end
+
+    for x = 1, WIDTH do
+        -- bottom pixels start at white
+        pixels[HEIGHT][x] = table.maxn(palette)
+    end
+
+    for i, v in ipairs(palette) do
+        -- convert palette from &quot;bytes&quot; to floats
+        palette[i] = {v[1]/255, v[2]/255, v[3]/255}
+    end
+end
+
+function love.draw()
+    for y = 1, HEIGHT do
+        for x = 1, WIDTH do
+            color = pixels[y][x]
+            love.graphics.setColor(palette[color][1], palette[color][2], palette[color][3], 1)
+            love.graphics.rectangle('fill', (x-1) * PWIDTH, (y-1) * PHEIGHT - 1, PWIDTH, PHEIGHT)
+        end
+    end
+end
+
+function doFire()
+    for y = 2, HEIGHT do
+        for x = 1, WIDTH do
+            spreadFire(x, y)
+        end
+    end
+end
+
+function spreadFire(x,y)
+    rand = math.floor(math.random() + 0.5)
+    pixels[y-1][x] = math.max(1, pixels[y][x] - rand)
+end
+
+function love.update(dt)
+    doFire()
+end
+</code></pre>
+</details>
+</p>
+<p>This finally starts to look fire-like.</p>
+<p><img src="/doom-fire-love2d/randomness-y.gif" alt="animated fire from the bottom up"></p>
+<h2 id="better-randomness">Better randomness<a class="anchor" href="#better-randomness">#</a></h2>
+<p>With a small change to <code>spreadFire()</code> we can make the fire more realistic by
+adding randomness along the X-axis.</p>
+<p>First of all, we&rsquo;re going to be doing bitwise operations, which Lua doesn&rsquo;t
+support natively. Pull in a library to do these operations by adding this line
+to the very top of <code>main.lua</code>:</p>
+<pre><code class="language-lua">local bit = require(&quot;bit&quot;)
+</code></pre>
+<p>Now modify <code>spreadFire()</code>:</p>
+<pre><code class="language-lua">function spreadFire(x,y)
+    rand = math.floor(math.random() * 3 + 0.5)
+    pixels[y-1][x - rand + 1] = math.max(1, pixels[y][x] - bit.band(1, rand))
+end
+</code></pre>
+<p>This code now gets a random number from 0-3. It then randomly changes the
+destination X coordinate by -2 to +1 and sets the palette index to the value of
+the pixel below it minus a random value of 0 or 1. The 0 or 1 comes from
+performing a <a href="https://en.wikipedia.org/wiki/Bitwise_operation#AND" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>bitwise AND</a>
+
+on the random 0-3 number to get the lowest bit.</p>
+<h3 id="result-4">Result<a class="anchor" href="#result-4">#</a></h3>
+<p>
+<details>
+<summary>Complete code</summary>
+<pre><code class="language-lua">local bit = require(&quot;bit&quot;)
+
+WIDTH = 100
+HEIGHT = 100
+PWIDTH = love.graphics.getWidth() / WIDTH
+PHEIGHT = love.graphics.getHeight() / HEIGHT
+pixels = {}
+
+palette = {
+    {7,7,7},
+    {28,8,8},
+    {43,17,9},
+    {65,19,11},
+    {80,28,13},
+    {95,36,16},
+    {110,38,18},
+    {133,47,22},
+    {148,55,25},
+    {163,70,30},
+    {178,79,33},
+    {185,80,34},
+    {208,89,39},
+    {208,96,40},
+    {208,96,40},
+    {201,102,41},
+    {202,109,45},
+    {195,115,45},
+    {196,123,47},
+    {197,130,49},
+    {198,138,53},
+    {190,137,53},
+    {191,145,54},
+    {192,152,60},
+    {186,160,61},
+    {186,160,61},
+    {187,167,67},
+    {187,167,67},
+    {189,175,73},
+    {182,175,72},
+    {183,182,74},
+    {183,182,79},
+    {207,206,124},
+    {223,223,166},
+    {239,239,203},
+    {255,255,255}
+}
+
+function love.load()
+    for y = 1, HEIGHT do
+        pixels[y] = {}
+        for x = 1, WIDTH do
+            -- init screen to black
+            pixels[y][x] = 1
+        end
+    end
+
+    for x = 1, WIDTH do
+        -- bottom pixels start at white
+        pixels[HEIGHT][x] = table.maxn(palette)
+    end
+
+    for i, v in ipairs(palette) do
+        -- convert palette from &quot;bytes&quot; to floats
+        palette[i] = {v[1]/255, v[2]/255, v[3]/255}
+    end
+end
+
+function love.draw()
+    for y = 1, HEIGHT do
+        for x = 1, WIDTH do
+            color = pixels[y][x]
+            love.graphics.setColor(palette[color][1], palette[color][2], palette[color][3], 1)
+            love.graphics.rectangle('fill', (x-1) * PWIDTH, (y-1) * PHEIGHT - 1, PWIDTH, PHEIGHT)
+        end
+    end
+end
+
+function doFire()
+    for y = 2, HEIGHT do
+        for x = 1, WIDTH do
+            spreadFire(x, y)
+        end
+    end
+end
+
+function spreadFire(x,y)
+    rand = math.floor(math.random() * 3 + 0.5)
+    pixels[y-1][x - rand + 1] = math.max(1, pixels[y][x] - bit.band(1, rand))
+end
+
+function love.update(dt)
+    doFire()
+end
+</code></pre>
+</details>
+</p>
+<p>Looks great! Here&rsquo;s some nice pixelated fire, from only a small amount of lua.</p>
+<p><img src="/doom-fire-love2d/randomness-x.gif" alt="animated fire from the bottom up and left and right"></p>
+<h2 id="extra-credit-turning-the-fire-on-and-off">Extra credit: Turning the fire on and off<a class="anchor" href="#extra-credit-turning-the-fire-on-and-off">#</a></h2>
+<p>I mentioned earlier than the line of white pixels at the bottom of the window
+acts like the generator of the fire. So what happens if we turn off the
+generator?</p>
+<p>Try setting the bottom line to black when you press the space bar.</p>
+<pre><code class="language-lua">function love.update(dt)
+    if love.keyboard.isDown('space')
+    then
+        for x = 1, WIDTH do
+            -- turn off generator line by setting it to black
+            pixels[HEIGHT][x] = 1
+        end
+    else
+        for x = 1, WIDTH do
+            -- turn generator line back on
+            pixels[HEIGHT][x] = table.maxn(palette)
+        end
+    end
+
+    doFire()
+end
+</code></pre>
+<h3 id="result-5">Result<a class="anchor" href="#result-5">#</a></h3>
+<p>
+<details>
+<summary>Complete code</summary>
+<pre><code class="language-lua">local bit = require(&quot;bit&quot;)
+
+WIDTH = 100
+HEIGHT = 100
+PWIDTH = love.graphics.getWidth() / WIDTH
+PHEIGHT = love.graphics.getHeight() / HEIGHT
+pixels = {}
+
+palette = {
+    {7,7,7},
+    {28,8,8},
+    {43,17,9},
+    {65,19,11},
+    {80,28,13},
+    {95,36,16},
+    {110,38,18},
+    {133,47,22},
+    {148,55,25},
+    {163,70,30},
+    {178,79,33},
+    {185,80,34},
+    {208,89,39},
+    {208,96,40},
+    {208,96,40},
+    {201,102,41},
+    {202,109,45},
+    {195,115,45},
+    {196,123,47},
+    {197,130,49},
+    {198,138,53},
+    {190,137,53},
+    {191,145,54},
+    {192,152,60},
+    {186,160,61},
+    {186,160,61},
+    {187,167,67},
+    {187,167,67},
+    {189,175,73},
+    {182,175,72},
+    {183,182,74},
+    {183,182,79},
+    {207,206,124},
+    {223,223,166},
+    {239,239,203},
+    {255,255,255}
+}
+
+function love.load()
+    for y = 1, HEIGHT do
+        pixels[y] = {}
+        for x = 1, WIDTH do
+            -- init screen to black
+            pixels[y][x] = 1
+        end
+    end
+
+    for x = 1, WIDTH do
+        -- bottom pixels start at white
+        pixels[HEIGHT][x] = table.maxn(palette)
+    end
+
+    for i, v in ipairs(palette) do
+        -- convert palette from &quot;bytes&quot; to floats
+        palette[i] = {v[1]/255, v[2]/255, v[3]/255}
+    end
+end
+
+function love.draw()
+    for y = 1, HEIGHT do
+        for x = 1, WIDTH do
+            color = pixels[y][x]
+            love.graphics.setColor(palette[color][1], palette[color][2], palette[color][3], 1)
+            love.graphics.rectangle('fill', (x-1) * PWIDTH, (y-1) * PHEIGHT - 1, PWIDTH, PHEIGHT)
+        end
+    end
+end
+
+function doFire()
+    for y = 2, HEIGHT do
+        for x = 1, WIDTH do
+            spreadFire(x, y)
+        end
+    end
+end
+
+function spreadFire(x,y)
+    rand = math.floor(math.random() * 3 + 0.5)
+    pixels[y-1][x - rand + 1] = math.max(1, pixels[y][x] - bit.band(1, rand))
+end
+
+function love.update(dt)
+    if love.keyboard.isDown('space')
+    then
+        for x = 1, WIDTH do
+            -- turn off generator line
+            pixels[HEIGHT][x] = 1
+        end
+    else
+        for x = 1, WIDTH do
+            -- turn generator line back on
+            pixels[HEIGHT][x] = table.maxn(palette)
+        end
+    end
+
+    doFire()
+end
+</code></pre>
+</details>
+</p>
+<p>Et voilà! Pixely but realistic looking fire that can turn on and off at the
+press of a button.</p>
+<p><img src="/doom-fire-love2d/on-and-off.gif" alt="animated fire turning on and off"></p>
+<h2 id="exercises-for-the-reader">Exercises for the reader<a class="anchor" href="#exercises-for-the-reader">#</a></h2>
+<p>Here are a couple of interesting tweaks you can try to implement to check your
+understanding of the code. See if you can complete each one by changing only a
+single line of code.</p>
+<ul>
+<li>Try changing the fire color to green or blue</li>
+<li>Try making the fire shorter</li>
+</ul>
+
+
+              
+          </article>
+          
+
+<ul class="tags__list">
+    
+    <li class="tag__item">
+        <a class="tag__link" href="https://dylan-garrett.com/tags/tutorial/">tutorial</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://dylan-garrett.com/tags/love2d/">love2d</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://dylan-garrett.com/tags/lua/">lua</a>
+    </li></ul>
+
+ <div class="pagination">
+  
+
+  
+</div>
+
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+      <a class="social-icons__link" rel="me" title="GitHub"
+         href="https://github.com/dgarrett"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('https://dylan-garrett.com/svg/github.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__link" rel="me" title="LinkedIn"
+         href="https://www.linkedin.com/in/dylan-garrett-9894ab44/"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('https://dylan-garrett.com/svg/linkedin.svg')"></div>
+      </a>
+    
+     
+</div>
+
+            <p>© 2021 Dylan Garrett</p>
+          </footer>
+          </div>
+      </div>
+      
+      <div class="toc-container">
+          
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#löve-program-layout">LÖVE program layout</a></li>
+    <li><a href="#drawing-a-pixel-grid">Drawing a pixel grid</a>
+      <ul>
+        <li><a href="#global-variables">Global variables</a></li>
+        <li><a href="#generating-color-data">Generating color data</a></li>
+        <li><a href="#drawing-pixels">Drawing pixels</a></li>
+        <li><a href="#result">Result</a></li>
+      </ul>
+    </li>
+    <li><a href="#color-palette">Color palette</a>
+      <ul>
+        <li><a href="#palette-table">Palette table</a></li>
+        <li><a href="#switching-pixels-to-palette-values">Switching pixels to palette values</a></li>
+        <li><a href="#drawing-with-the-palette">Drawing with the palette</a></li>
+        <li><a href="#result-1">Result</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-fire">Basic fire</a>
+      <ul>
+        <li><a href="#starting-state">Starting state</a></li>
+        <li><a href="#propagate-fire">Propagate fire</a></li>
+        <li><a href="#result-2">Result</a></li>
+      </ul>
+    </li>
+    <li><a href="#simple-randomness">Simple randomness</a>
+      <ul>
+        <li><a href="#result-3">Result</a></li>
+      </ul>
+    </li>
+    <li><a href="#better-randomness">Better randomness</a>
+      <ul>
+        <li><a href="#result-4">Result</a></li>
+      </ul>
+    </li>
+    <li><a href="#extra-credit-turning-the-fire-on-and-off">Extra credit: Turning the fire on and off</a>
+      <ul>
+        <li><a href="#result-5">Result</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercises-for-the-reader">Exercises for the reader</a></li>
+  </ul>
+</nav>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.575dda8d49ee02639942c63564273e6da972ab531dda26a08800bdcb477cbd7f.js" integrity="sha256-V13ajUnuAmOZQsY1ZCc&#43;balyq1Md2iagiAC9y0d8vX8=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+    <script src="/js/table-of-contents.js"></script>
+  
+
+
+</body>
+
+</html>
