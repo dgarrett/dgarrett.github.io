@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>eink on Dylan Garrett</title>
+    <link>https://dylan-garrett.com/tags/eink/</link>
+    <description>Recent content in eink on Dylan Garrett</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© {year} Dylan Garrett</copyright>
+    <lastBuildDate>Tue, 27 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://dylan-garrett.com/tags/eink/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Constrained Technology</title>
+      <link>https://dylan-garrett.com/blog/constrained-technology/</link>
+      <pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylan-garrett.com/blog/constrained-technology/</guid>
+      <description>The enemy of art is the absence of limitations. — Orson Welles
+ I&amp;rsquo;d like to share some of my favorite constrained technologies. Technologies that I believe are better because of, and not despite, their limitations.
+e-Ink E-ink insists on a certain interaction model. Grey-scale rather than full color pushes one toward text and informative illustrations. Slow refresh enforces pages of static content rather than endless scrolling of attention-grabbing content.</description>
+    </item>
+    
+  </channel>
+</rss>

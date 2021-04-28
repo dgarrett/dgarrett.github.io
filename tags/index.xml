@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year} Dylan Garrett</copyright>
-    <lastBuildDate>Mon, 05 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://dylan-garrett.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://dylan-garrett.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>calm-tech</title>
+      <link>https://dylan-garrett.com/tags/calm-tech/</link>
+      <pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylan-garrett.com/tags/calm-tech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>eink</title>
+      <link>https://dylan-garrett.com/tags/eink/</link>
+      <pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylan-garrett.com/tags/eink/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>love2d</title>
       <link>https://dylan-garrett.com/tags/love2d/</link>
