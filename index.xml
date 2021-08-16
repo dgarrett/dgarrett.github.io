@@ -75,7 +75,10 @@ If you choose to use my Service, then you agree to the collection and use of inf
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://dylan-garrett.com/projects/birb/</guid>
-      <description>Ludum Dare Submission Source  Play in an online Gameboy emulator! </description>
+      <description>Ludum Dare Submission Source  Play in an online Gameboy emulator! Begin life as a mere dot. Progress through trials into a beautiful birb. Peck your way to the top. The fun never ends! :) (Seriously though, it just restarts the last level endlessly)
+Uack.
+Play in a web browser or on a Gameboy or Gameboy emulator.
+Written for Gameboy and Gameboy Color in C using GBDK. Download the ROM and play with a Gameboy emulator for sound and the full experience.</description>
     </item>
     
     <item>
