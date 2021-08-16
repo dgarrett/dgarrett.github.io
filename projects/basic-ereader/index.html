@@ -37,7 +37,7 @@
   
   
     
-    <link type="text/css" rel="stylesheet" href="/css/post.min.a4712d0376acf8c0491ef2b98baf2f9287629f027a654e15b0ca42433957f47d.css" integrity="sha256-pHEtA3as&#43;MBJHvK5i68vkodinwJ6ZU4VsMpCQzlX9H0="/>
+    <link type="text/css" rel="stylesheet" href="/css/post.min.86d1effd4c412b85ac13db53a90c473a0f256f789b821e131125c9aa25cb6a6d.css" integrity="sha256-htHv/UxBK4WsE9tTqQxHOg8lb3ibgh4TESXJqiXLam0="/>
   
     
     <link type="text/css" rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
@@ -121,11 +121,27 @@
 </p>
 <h2 id="what-you-need">What you need<a class="anchor" href="#what-you-need">#</a></h2>
 <ul>
-<li>WaveShare EPaper Display (ex 1.54in 200x200 <a href="https://smile.amazon.com/gp/product/B07DH6K1VQ/">https://smile.amazon.com/gp/product/B07DH6K1VQ/</a>)</li>
-<li>ESP32 Development Board (ex <a href="https://www.adafruit.com/product/3405">https://www.adafruit.com/product/3405</a> or <a href="https://smile.amazon.com/gp/product/B0718T232Z/">https://smile.amazon.com/gp/product/B0718T232Z/</a>)</li>
+<li>WaveShare EPaper Display (ex 1.54in 200x200 <a href="https://smile.amazon.com/gp/product/B07DH6K1VQ/" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>https://smile.amazon.com/gp/product/B07DH6K1VQ/</a>
+)</li>
+<li>ESP32 Development Board (ex <a href="https://www.adafruit.com/product/3405" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>https://www.adafruit.com/product/3405</a>
+ or <a href="https://smile.amazon.com/gp/product/B0718T232Z/" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>https://smile.amazon.com/gp/product/B0718T232Z/</a>
+)</li>
 <li>4 SPST switches</li>
 <li>Breadboard</li>
-<li>Optional: Basic USB logic analyzer (<a href="https://smile.amazon.com/gp/product/B077LSG5P2/">https://smile.amazon.com/gp/product/B077LSG5P2/</a>)</li>
+<li>Optional: Basic USB logic analyzer (<a href="https://smile.amazon.com/gp/product/B077LSG5P2/" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>https://smile.amazon.com/gp/product/B077LSG5P2/</a>
+)</li>
 </ul>
 <h2 id="wiring-instructions">Wiring Instructions<a class="anchor" href="#wiring-instructions">#</a></h2>
 <p>The specific wiring is going to be different depending on what board you&rsquo;re using. These instructions are for the Adafruit HUZZAH32</p>
@@ -144,24 +160,44 @@
 <p>We&rsquo;ll use the ESP32&rsquo;s internal pullup resistors, so no external resistors are needed.</p>
 <h2 id="software-setup">Software Setup<a class="anchor" href="#software-setup">#</a></h2>
 <ol>
-<li>Install Arduino IDE <a href="https://www.arduino.cc/en/Main/Software">https://www.arduino.cc/en/Main/Software</a></li>
-<li>Install Arduino Core for the ESP32 <a href="https://github.com/espressif/arduino-esp32">https://github.com/espressif/arduino-esp32</a></li>
+<li>Install Arduino IDE <a href="https://www.arduino.cc/en/Main/Software" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>https://www.arduino.cc/en/Main/Software</a>
+</li>
+<li>Install Arduino Core for the ESP32 <a href="https://github.com/espressif/arduino-esp32" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>https://github.com/espressif/arduino-esp32</a>
+</li>
 <li>In the Arduino IDE, select Tools -&gt; Manage Libraries and install the following libraries: ArduinoHttpClient, Adafruit GFX Library, ArdunoJSON</li>
 <li>Install GxEPD manually
 <ol>
-<li>Download the library as a zip file <a href="https://github.com/ZinggJM/GxEPD/archive/master.zip">https://github.com/ZinggJM/GxEPD/archive/master.zip</a></li>
+<li>Download the library as a zip file <a href="https://github.com/ZinggJM/GxEPD/archive/master.zip" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>https://github.com/ZinggJM/GxEPD/archive/master.zip</a>
+</li>
 <li>In Arduino IDE, select Sketch -&gt; Include Library -&gt; Add .ZIP Library -&gt; Select the GxEPD zip file</li>
 </ol>
 </li>
 <li>Get a Pocket API key
 <ol>
-<li>Create a new Pocket API app: <a href="https://getpocket.com/developer/">https://getpocket.com/developer/</a></li>
+<li>Create a new Pocket API app: <a href="https://getpocket.com/developer/" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>https://getpocket.com/developer/</a>
+</li>
 <li>At the end up the app creation, copy the consumer key and access key into <code>POCKET_CONSUMER_KEY</code> and <code>POCKET_ACCESS_KEY</code> in Keys.h</li>
 </ol>
 </li>
 <li>Get an Aylien Text Analysis API key
 <ol>
-<li>Create an account here: <a href="https://developer.aylien.com/signup">https://developer.aylien.com/signup</a></li>
+<li>Create an account here: <a href="https://developer.aylien.com/signup" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>https://developer.aylien.com/signup</a>
+</li>
 <li>Create an app and get an application ID and an application key. Copy those into <code>AYLIEN_APPLICATION_ID</code> and <code>AYLIEN_APPLICATION_KEY</code> in Keys.h</li>
 </ol>
 </li>
@@ -175,7 +211,11 @@
 </ol>
 <h2 id="using-a-digital-logic-analyzer-to-see-whats-happening">Using a Digital Logic Analyzer to see what&rsquo;s happening<a class="anchor" href="#using-a-digital-logic-analyzer-to-see-whats-happening">#</a></h2>
 <ol>
-<li>Download the supported software for your logic analyzer. Ex: <a href="https://www.saleae.com/downloads/">https://www.saleae.com/downloads/</a></li>
+<li>Download the supported software for your logic analyzer. Ex: <a href="https://www.saleae.com/downloads/" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>https://www.saleae.com/downloads/</a>
+</li>
 <li>Connect your logic analyzer&rsquo;s ground lead to the circuit&rsquo;s ground</li>
 <li>Connect other analyzer channels to the other SPI connections to the EPaper display. The important ones are CS, CLK, and DIN.</li>
 <li>Add an Analyzer configuration for SPI. Set MOSI to the channel connected to the EPaper display&rsquo;s DIN pin; set MISO to None; set Clock to the CLK pin; set Enable to the CS pin. Other options should remain at their defaults.</li>

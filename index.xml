@@ -44,7 +44,7 @@ It&amp;rsquo;s a simple app, just add players, tap on a player, and add or subtr
       <pubDate>Wed, 30 Dec 2020 21:36:44 -0800</pubDate>
       
       <guid>https://dylan-garrett.com/other/ios-app-support/</guid>
-      <description>I don&amp;rsquo;t officially provide support for my free apps. They are provided without warranty and are intended for use as-is. But you may contact me at app-support@dylan-garrett.com.
+      <description>I don&amp;rsquo;t officially provide support for my free apps. They are provided without warranty and are intended for use as-is. But you may contact me at app-support@dylan-garrett.com .
 THE SOFTWARE IS PROVIDED &amp;ldquo;AS IS&amp;rdquo;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</description>
     </item>
     
@@ -93,7 +93,7 @@ If you choose to use my Service, then you agree to the collection and use of inf
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://dylan-garrett.com/projects/basic-ereader/</guid>
-      <description>Source  What you need  WaveShare EPaper Display (ex 1.54in 200x200 https://smile.amazon.com/gp/product/B07DH6K1VQ/) ESP32 Development Board (ex https://www.adafruit.com/product/3405 or https://smile.amazon.com/gp/product/B0718T232Z/) 4 SPST switches Breadboard Optional: Basic USB logic analyzer (https://smile.amazon.com/gp/product/B077LSG5P2/)  Wiring Instructions The specific wiring is going to be different depending on what board you&amp;rsquo;re using. These instructions are for the Adafruit HUZZAH32
+      <description>Source  What you need  WaveShare EPaper Display (ex 1.54in 200x200 https://smile.amazon.com/gp/product/B07DH6K1VQ/ ) ESP32 Development Board (ex https://www.adafruit.com/product/3405 or https://smile.amazon.com/gp/product/B0718T232Z/ ) 4 SPST switches Breadboard Optional: Basic USB logic analyzer (https://smile.amazon.com/gp/product/B077LSG5P2/ )  Wiring Instructions The specific wiring is going to be different depending on what board you&amp;rsquo;re using. These instructions are for the Adafruit HUZZAH32
 Connect the following:
  SDI/SCK -&amp;gt; MOSI SCK/SCLK -&amp;gt; SCK CS -&amp;gt; 15 DC -&amp;gt; 33 RST/Reset -&amp;gt; 27 Busy -&amp;gt; 32  If you want to use different pins, you can change the pin configurations for GxIO_Class and GxEPD_Class in BasicEPaperReader.</description>
     </item>
@@ -114,7 +114,7 @@ Connect the following:
       
       <guid>https://dylan-garrett.com/projects/tweeter/</guid>
       <description>Source  Send messages over LoRa to a thermal printer
-What you need  2x ESP32 Development Boards with LoRa (ex https://smile.amazon.com/gp/product/B076MTF8NW/)  One will be used as the Sender One will be used as the receiver   Serial Thermal Printer and paper (ex https://www.adafruit.com/product/597)  Wiring Instructions for Sender ESP32 board Just plug into USB for power
+What you need  2x ESP32 Development Boards with LoRa (ex https://smile.amazon.com/gp/product/B076MTF8NW/ )  One will be used as the Sender One will be used as the receiver   Serial Thermal Printer and paper (ex https://www.adafruit.com/product/597 )  Wiring Instructions for Sender ESP32 board Just plug into USB for power
 Wiring Instructions for Receiver ESP32 board One of your boards will be the receiver, so it needs to be connected to the thermal printer.</description>
     </item>
     

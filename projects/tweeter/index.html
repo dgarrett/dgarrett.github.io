@@ -37,7 +37,7 @@
   
   
     
-    <link type="text/css" rel="stylesheet" href="/css/post.min.a4712d0376acf8c0491ef2b98baf2f9287629f027a654e15b0ca42433957f47d.css" integrity="sha256-pHEtA3as&#43;MBJHvK5i68vkodinwJ6ZU4VsMpCQzlX9H0="/>
+    <link type="text/css" rel="stylesheet" href="/css/post.min.86d1effd4c412b85ac13db53a90c473a0f256f789b821e131125c9aa25cb6a6d.css" integrity="sha256-htHv/UxBK4WsE9tTqQxHOg8lb3ibgh4TESXJqiXLam0="/>
   
     
     <link type="text/css" rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
@@ -122,19 +122,31 @@
 <p>Send messages over LoRa to a thermal printer</p>
 <h2 id="what-you-need">What you need<a class="anchor" href="#what-you-need">#</a></h2>
 <ul>
-<li>2x ESP32 Development Boards with LoRa (ex <a href="https://smile.amazon.com/gp/product/B076MTF8NW/">https://smile.amazon.com/gp/product/B076MTF8NW/</a>)
+<li>2x ESP32 Development Boards with LoRa (ex <a href="https://smile.amazon.com/gp/product/B076MTF8NW/" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>https://smile.amazon.com/gp/product/B076MTF8NW/</a>
+)
 <ul>
 <li>One will be used as the Sender</li>
 <li>One will be used as the receiver</li>
 </ul>
 </li>
-<li>Serial Thermal Printer and paper (ex <a href="https://www.adafruit.com/product/597">https://www.adafruit.com/product/597</a>)</li>
+<li>Serial Thermal Printer and paper (ex <a href="https://www.adafruit.com/product/597" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>https://www.adafruit.com/product/597</a>
+)</li>
 </ul>
 <h2 id="wiring-instructions-for-sender-esp32-board">Wiring Instructions for Sender ESP32 board<a class="anchor" href="#wiring-instructions-for-sender-esp32-board">#</a></h2>
 <p>Just plug into USB for power</p>
 <h2 id="wiring-instructions-for-receiver-esp32-board">Wiring Instructions for Receiver ESP32 board<a class="anchor" href="#wiring-instructions-for-receiver-esp32-board">#</a></h2>
 <p>One of your boards will be the receiver, so it needs to be connected to the thermal printer.</p>
-<p>Follow Adafruit directions for connecting a thermal printer: <a href="https://learn.adafruit.com/mini-thermal-receipt-printer/microcontroller">https://learn.adafruit.com/mini-thermal-receipt-printer/microcontroller</a></p>
+<p>Follow Adafruit directions for connecting a thermal printer: <a href="https://learn.adafruit.com/mini-thermal-receipt-printer/microcontroller" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>https://learn.adafruit.com/mini-thermal-receipt-printer/microcontroller</a>
+</p>
 <ul>
 <li>Red -&gt; 5V</li>
 <li>Black -&gt; GND</li>
@@ -144,7 +156,11 @@
 </ul>
 <h2 id="software-setup">Software Setup<a class="anchor" href="#software-setup">#</a></h2>
 <ol>
-<li>Set up the Heltec ESP32 Arduino Core: <a href="https://docs.heltec.cn/#/en/user_manual/how_to_install_esp32_Arduino">https://docs.heltec.cn/#/en/user_manual/how_to_install_esp32_Arduino</a></li>
+<li>Set up the Heltec ESP32 Arduino Core: <a href="https://docs.heltec.cn/#/en/user_manual/how_to_install_esp32_Arduino" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>https://docs.heltec.cn/#/en/user_manual/how_to_install_esp32_Arduino</a>
+</li>
 <li>In the Arduino IDE, select Tools -&gt; Board and Select &ldquo;WIFI_LoRa_32_V2&rdquo;</li>
 <li>In the Arduino IDE, select Tools -&gt; Manage Libraries and install the library: Adafruit Thermal Printer Library</li>
 <li>Deploy BirbTweeter_Sender to one of the ESP32 boards</li>
