@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <title>Readwise Inline Tags | Dylan Garrett</title>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="">
+  <meta name="author" content="Dylan Garrett">
+  <meta name="keywords" content="readwise , learning , note-taking">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Readwise Inline Tags | Dylan Garrett" />
+  <meta name="twitter:description" content=""/>
+  <meta name="twitter:site" content="@dygar_" />
+  <meta name="twitter:creator" content="https://twitter.com/dygar_" />
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/post.min.86d1effd4c412b85ac13db53a90c473a0f256f789b821e131125c9aa25cb6a6d.css" integrity="sha256-htHv/UxBK4WsE9tTqQxHOg8lb3ibgh4TESXJqiXLam0="/>
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/dylan-garrett.com\/"
+      },
+      "articleSection" : "blog",
+      "name" : "Readwise Inline Tags",
+      "headline" : "Readwise Inline Tags",
+      "description" : "",
+      "inLanguage" : "en-US",
+      "author" : "Dylan Garrett",
+      "creator" : "Dylan Garrett",
+      "publisher": "Dylan Garrett",
+      "accountablePerson" : "Dylan Garrett",
+      "copyrightHolder" : "Dylan Garrett",
+      "copyrightYear" : "2021",
+      "datePublished": "2021-08-21 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2021-08-21 00:00:00 \u002b0000 UTC",
+      "url" : "https:\/\/dylan-garrett.com\/blog\/readwise-inline-tags\/",
+      "wordCount" : "222",
+      "keywords" : ["readwise", "learning", "note-taking", "Blog"]
+    }
+  
+  </script>
+
+
+    <script data-goatcounter="https://dylan-garrett.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script></head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" id="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/">about</a>
+      </li>
+    
+      <li>
+        <a  class="active"
+         href="/blog">blog</a>
+      </li>
+    
+      <li>
+        <a  href="/projects">projects</a>
+      </li>
+    
+      <li>
+        <a  href="/resume">resume</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">Readwise Inline Tags</h1>
+            <time datetime="2021-08-21 00:00:00 &#43;0000 UTC" class="post__date"
+            >Aug 21 2021</time>
+          </header>
+          <article class="post__content">
+              
+<p>The highlight-aggregation service <a href="https://readwise.io/i/dylan70" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>Readwise</a>
+
+supports a feature called <em>inline tagging</em>, which allows front-loading the work
+of organizing highlights by adding tags to highlight notes. Beyond plain
+tagging, Readwise supports several special <em>action tags</em>.</p>
+<p>Readwise documentation on this feature is sparse and spread across several
+locations, so here is a summary.</p>
+<h2 id="action-tags">Action tags<a class="anchor" href="#action-tags">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Action Tag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.cN</code></td>
+<td>Concatenate highlights <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> (&quot;.c1 + .c2&quot;, &ldquo;.c1 + .c2 + .c3&rdquo;)</td>
+</tr>
+<tr>
+<td><code>.hN</code></td>
+<td>Heading level <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> (.h1-&gt;.h2-&gt;h3, .h1-&gt;.h2)</td>
+</tr>
+<tr>
+<td><code>.qa Question? Answer</code></td>
+<td>Question &amp; Answer <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> (Q: &ldquo;Example question?&rdquo; A: &ldquo;Example Answer&rdquo;)</td>
+</tr>
+</tbody>
+</table>
+<p>For action tags containing <code>N</code>, replace <code>N</code> with a number starting from 1 and
+incrementing in subsequent related highlights.</p>
+<h2 id="shorthand-tags">Shorthand tags<a class="anchor" href="#shorthand-tags">#</a></h2>
+<p>Tag with shorthand, like <code>.prob</code>, then rename the tag on Readwise to
+<code>.probability</code>. Readwise will learn the shorthand and rename all future uses
+automatically. <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<h2 id="future-planned-action-tags">Future planned action tags<a class="anchor" href="#future-planned-action-tags">#</a></h2>
+<p>Readwise has mentioned plans for some future action tags. <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<table>
+<thead>
+<tr>
+<th>Action Tag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.i</code></td>
+<td>Inbox (accelerate highlight into daily review)</td>
+</tr>
+<tr>
+<td><code>.rl</code></td>
+<td>Reading List (reminder to add mentioned book to reading list)</td>
+</tr>
+<tr>
+<td><code>@</code></td>
+<td>Share with friends</td>
+</tr>
+</tbody>
+</table>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://blog.readwise.io/combine-highlights-on-the-fly/" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>How to Combine Highlights On-the-Fly with Readwise</a>
+&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://blog.readwise.io/add-chapters-to-highlights/" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>How to Add Chapters to Your Highlights in Readwise</a>
+&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p><a href="https://readwise.io/bookreview/1492820" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>How to Use Readwise -&gt; Advanced Usage -&gt; Question &amp; Answer Tag</a>
+&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p><a href="https://blog.readwise.io/tag-your-highlights-while-you-read/" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>How to Tag Your Highlights While You Read</a>
+&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p><a href="https://blog.readwise.io/tag-your-highlights-while-you-read/#fn2" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>How to Tag Your Highlights While You Read (Fn 2)</a>
+&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+
+              
+          </article>
+          
+
+<ul class="tags__list">
+    
+    <li class="tag__item">
+        <a class="tag__link" href="https://dylan-garrett.com/tags/note-taking/">note-taking</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://dylan-garrett.com/tags/productivity/">productivity</a>
+    </li></ul>
+
+ <div class="pagination">
+  
+    <a class="pagination__item" href="https://dylan-garrett.com/blog/constrained-technology/">
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title">Constrained Technology</span>
+    </a>
+  
+
+  
+</div>
+
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+      <a class="social-icons__link" rel="me" title="GitHub"
+         href="https://github.com/dgarrett"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('https://dylan-garrett.com/svg/github.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__link" rel="me" title="LinkedIn"
+         href="https://www.linkedin.com/in/dylan-garrett-9894ab44/"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('https://dylan-garrett.com/svg/linkedin.svg')"></div>
+      </a>
+    
+     
+</div>
+
+            <p>© 2021 Dylan Garrett</p>
+          </footer>
+          </div>
+      </div>
+      
+      <div class="toc-container">
+          
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#action-tags">Action tags</a></li>
+    <li><a href="#shorthand-tags">Shorthand tags</a></li>
+    <li><a href="#future-planned-action-tags">Future planned action tags</a></li>
+  </ul>
+</nav>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.575dda8d49ee02639942c63564273e6da972ab531dda26a08800bdcb477cbd7f.js" integrity="sha256-V13ajUnuAmOZQsY1ZCc&#43;balyq1Md2iagiAC9y0d8vX8=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+    <script src="/js/table-of-contents.js"></script>
+  
+
+
+</body>
+
+</html>

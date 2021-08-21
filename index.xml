@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year} Dylan Garrett</copyright>
-    <lastBuildDate>Tue, 27 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://dylan-garrett.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://dylan-garrett.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Readwise Inline Tags</title>
+      <link>https://dylan-garrett.com/blog/readwise-inline-tags/</link>
+      <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylan-garrett.com/blog/readwise-inline-tags/</guid>
+      <description>The highlight-aggregation service Readwise supports a feature called inline tagging, which allows front-loading the work of organizing highlights by adding tags to highlight notes. Beyond plain tagging, Readwise supports several special action tags.
+Readwise documentation on this feature is sparse and spread across several locations, so here is a summary.
+Action tags    Action Tag Description     .cN Concatenate highlights 1 (&amp;quot;.c1 + .c2&amp;quot;, &amp;ldquo;.c1 + .</description>
+    </item>
+    
     <item>
       <title>Constrained Technology</title>
       <link>https://dylan-garrett.com/blog/constrained-technology/</link>
