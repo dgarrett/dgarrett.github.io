@@ -16,7 +16,7 @@
       <guid>https://dylan-garrett.com/blog/readwise-inline-tags/</guid>
       <description>The highlight-aggregation service Readwise supports a feature called inline tagging, which allows front-loading the work of organizing highlights by adding tags to highlight notes. Beyond plain tagging, Readwise supports several special action tags.
 Readwise documentation on this feature is sparse and spread across several locations, so here is a summary.
-Action tags    Action Tag Description     .cN Concatenate highlights 1 (&amp;quot;.c1 + .c2&amp;quot;, &amp;ldquo;.c1 + .</description>
+Action tags Action Tag Description .cN Concatenate highlights 1 (&amp;quot;.c1 + .c2&amp;quot;, &amp;ldquo;.c1 + .c2 + .c3&amp;rdquo;) .hN Heading level 2 (.</description>
     </item>
     
   </channel>

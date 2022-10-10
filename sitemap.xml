@@ -3,10 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://dylan-garrett.com/</loc>
-    <lastmod>2021-08-21T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dylan-garrett.com/blog/</loc>
-    <lastmod>2021-08-21T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dylan-garrett.com/tags/embedded/</loc>
+    <lastmod>2022-10-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dylan-garrett.com/tags/rust/</loc>
+    <lastmod>2022-10-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dylan-garrett.com/blog/rust-digispark-attiny/</loc>
+    <lastmod>2022-10-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dylan-garrett.com/tags/</loc>
+    <lastmod>2022-10-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dylan-garrett.com/tags/tutorial/</loc>
+    <lastmod>2022-10-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dylan-garrett.com/tags/note-taking/</loc>
     <lastmod>2021-08-21T00:00:00+00:00</lastmod>
@@ -15,9 +30,6 @@
     <lastmod>2021-08-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dylan-garrett.com/blog/readwise-inline-tags/</loc>
-    <lastmod>2021-08-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dylan-garrett.com/tags/</loc>
     <lastmod>2021-08-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dylan-garrett.com/tags/calm-tech/</loc>
@@ -36,9 +48,6 @@
     <lastmod>2021-04-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dylan-garrett.com/tags/lua/</loc>
-    <lastmod>2021-04-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dylan-garrett.com/tags/tutorial/</loc>
     <lastmod>2021-04-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dylan-garrett.com/projects/</loc>

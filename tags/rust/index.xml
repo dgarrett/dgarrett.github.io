@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rust on Dylan Garrett</title>
+    <link>https://dylan-garrett.com/tags/rust/</link>
+    <description>Recent content in rust on Dylan Garrett</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© {year} Dylan Garrett</copyright>
+    <lastBuildDate>Sun, 09 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dylan-garrett.com/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust on a Digispark ATtiny85</title>
+      <link>https://dylan-garrett.com/blog/rust-digispark-attiny/</link>
+      <pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylan-garrett.com/blog/rust-digispark-attiny/</guid>
+      <description>The Digistump Digispark is a tiny, simple, and cheap development board using the ATtiny85 MCU. While the official version is no longer for sale, clones are easily found online for around $2 each.
+Rahix&amp;rsquo;s avr-hal already supports the ATtiny85 on the Adafruit Trinket board. The Trinket is nearly identical to the Digispark, but with a different USB bootloader, so avr-hal&amp;rsquo;s cargo run support won&amp;rsquo;t work. Instead, you&amp;rsquo;ll need to convert the output binary and deploy it with the micronucleus CLI tool.</description>
+    </item>
+    
+  </channel>
+</rss>

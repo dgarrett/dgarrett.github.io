@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year} Dylan Garrett</copyright>
-    <lastBuildDate>Sat, 21 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://dylan-garrett.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dylan-garrett.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust on a Digispark ATtiny85</title>
+      <link>https://dylan-garrett.com/blog/rust-digispark-attiny/</link>
+      <pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylan-garrett.com/blog/rust-digispark-attiny/</guid>
+      <description>The Digistump Digispark is a tiny, simple, and cheap development board using the ATtiny85 MCU. While the official version is no longer for sale, clones are easily found online for around $2 each.
+Rahix&amp;rsquo;s avr-hal already supports the ATtiny85 on the Adafruit Trinket board. The Trinket is nearly identical to the Digispark, but with a different USB bootloader, so avr-hal&amp;rsquo;s cargo run support won&amp;rsquo;t work. Instead, you&amp;rsquo;ll need to convert the output binary and deploy it with the micronucleus CLI tool.</description>
+    </item>
+    
     <item>
       <title>Readwise Inline Tags</title>
       <link>https://dylan-garrett.com/blog/readwise-inline-tags/</link>
@@ -16,7 +26,7 @@
       <guid>https://dylan-garrett.com/blog/readwise-inline-tags/</guid>
       <description>The highlight-aggregation service Readwise supports a feature called inline tagging, which allows front-loading the work of organizing highlights by adding tags to highlight notes. Beyond plain tagging, Readwise supports several special action tags.
 Readwise documentation on this feature is sparse and spread across several locations, so here is a summary.
-Action tags    Action Tag Description     .cN Concatenate highlights 1 (&amp;quot;.c1 + .c2&amp;quot;, &amp;ldquo;.c1 + .</description>
+Action tags Action Tag Description .cN Concatenate highlights 1 (&amp;quot;.c1 + .c2&amp;quot;, &amp;ldquo;.c1 + .c2 + .c3&amp;rdquo;) .hN Heading level 2 (.</description>
     </item>
     
     <item>
@@ -26,8 +36,8 @@ Action tags    Action Tag Description     .cN Concatenate highlights 1 (&amp;quo
       
       <guid>https://dylan-garrett.com/blog/constrained-technology/</guid>
       <description>The enemy of art is the absence of limitations. — Orson Welles
- I&amp;rsquo;d like to share some of my favorite constrained technologies. Technologies that I believe are better because of, and not despite, their limitations.
-e-Ink E-ink insists on a certain interaction model. Grey-scale rather than full color pushes one toward text and informative illustrations. Slow refresh enforces pages of static content rather than endless scrolling of attention-grabbing content.</description>
+I&amp;rsquo;d like to share some of my favorite constrained technologies. Technologies that I believe are better because of, and not despite, their limitations.
+e-Ink E-ink insists on a certain interaction model. Grey-scale rather than full color pushes one toward text and informative illustrations. Slow refresh enforces pages of static content rather than endless scrolling of attention-grabbing content. These nudges transfer control back to the reader and make e-ink my favorite display technology.</description>
     </item>
     
     <item>
@@ -45,7 +55,7 @@ e-Ink E-ink insists on a certain interaction model. Grey-scale rather than full 
       <pubDate>Wed, 30 Dec 2020 21:49:25 -0800</pubDate>
       
       <guid>https://dylan-garrett.com/projects/score-tracker/</guid>
-      <description>Download for  Apple Watch Keep track of the score while you play board games, card games, or any other kind of game with Score Tracker.
+      <description>Download for Apple Watch Keep track of the score while you play board games, card games, or any other kind of game with Score Tracker.
 It&amp;rsquo;s a simple app, just add players, tap on a player, and add or subtract points.</description>
     </item>
     
@@ -86,7 +96,7 @@ If you choose to use my Service, then you agree to the collection and use of inf
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://dylan-garrett.com/projects/birb/</guid>
-      <description>Ludum Dare Submission Source  Play in an online Gameboy emulator! Begin life as a mere dot. Progress through trials into a beautiful birb. Peck your way to the top. The fun never ends! :) (Seriously though, it just restarts the last level endlessly)
+      <description>Ludum Dare Submission Source Play in an online Gameboy emulator! Begin life as a mere dot. Progress through trials into a beautiful birb. Peck your way to the top. The fun never ends! :) (Seriously though, it just restarts the last level endlessly)
 Uack.
 Play in a web browser or on a Gameboy or Gameboy emulator.
 Written for Gameboy and Gameboy Color in C using GBDK. Download the ROM and play with a Gameboy emulator for sound and the full experience.</description>
@@ -107,9 +117,9 @@ Written for Gameboy and Gameboy Color in C using GBDK. Download the ROM and play
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://dylan-garrett.com/projects/basic-ereader/</guid>
-      <description>Source  What you need  WaveShare EPaper Display (ex 1.54in 200x200 https://smile.amazon.com/gp/product/B07DH6K1VQ/ ) ESP32 Development Board (ex https://www.adafruit.com/product/3405 or https://smile.amazon.com/gp/product/B0718T232Z/ ) 4 SPST switches Breadboard Optional: Basic USB logic analyzer (https://smile.amazon.com/gp/product/B077LSG5P2/ )  Wiring Instructions The specific wiring is going to be different depending on what board you&amp;rsquo;re using. These instructions are for the Adafruit HUZZAH32
+      <description>Source What you need WaveShare EPaper Display (ex 1.54in 200x200 https://smile.amazon.com/gp/product/B07DH6K1VQ/ ) ESP32 Development Board (ex https://www.adafruit.com/product/3405 or https://smile.amazon.com/gp/product/B0718T232Z/ ) 4 SPST switches Breadboard Optional: Basic USB logic analyzer (https://smile.amazon.com/gp/product/B077LSG5P2/ ) Wiring Instructions The specific wiring is going to be different depending on what board you&amp;rsquo;re using. These instructions are for the Adafruit HUZZAH32
 Connect the following:
- SDI/SCK -&amp;gt; MOSI SCK/SCLK -&amp;gt; SCK CS -&amp;gt; 15 DC -&amp;gt; 33 RST/Reset -&amp;gt; 27 Busy -&amp;gt; 32  If you want to use different pins, you can change the pin configurations for GxIO_Class and GxEPD_Class in BasicEPaperReader.</description>
+SDI/SCK -&amp;gt; MOSI SCK/SCLK -&amp;gt; SCK CS -&amp;gt; 15 DC -&amp;gt; 33 RST/Reset -&amp;gt; 27 Busy -&amp;gt; 32 If you want to use different pins, you can change the pin configurations for GxIO_Class and GxEPD_Class in BasicEPaperReader.</description>
     </item>
     
     <item>
@@ -127,8 +137,8 @@ Connect the following:
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://dylan-garrett.com/projects/tweeter/</guid>
-      <description>Source  Send messages over LoRa to a thermal printer
-What you need  2x ESP32 Development Boards with LoRa (ex https://smile.amazon.com/gp/product/B076MTF8NW/ )  One will be used as the Sender One will be used as the receiver   Serial Thermal Printer and paper (ex https://www.adafruit.com/product/597 )  Wiring Instructions for Sender ESP32 board Just plug into USB for power
+      <description>Source Send messages over LoRa to a thermal printer
+What you need 2x ESP32 Development Boards with LoRa (ex https://smile.amazon.com/gp/product/B076MTF8NW/ ) One will be used as the Sender One will be used as the receiver Serial Thermal Printer and paper (ex https://www.adafruit.com/product/597 ) Wiring Instructions for Sender ESP32 board Just plug into USB for power
 Wiring Instructions for Receiver ESP32 board One of your boards will be the receiver, so it needs to be connected to the thermal printer.</description>
     </item>
     
