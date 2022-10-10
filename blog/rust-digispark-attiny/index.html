@@ -128,7 +128,7 @@
           <article class="post__content">
               
 <img style="float: right; width: 235px;" src="/rust-digispark-attiny/digispark.jpg">
-<p>The <a href="https://digistump.com/wiki/digispark" 
+<p>The <a href="http://digistump.com/wiki/digispark" 
   
    target="_blank" rel="noreferrer noopener" 
 >Digistump Digispark</a>
@@ -157,7 +157,7 @@ to convert the output binary and deploy it with the <code>micronucleus</code> CL
 >Micronucleus
 CLI</a>
  for your
-platform</p>
+platform.</p>
 <h4 id="binutils-for-avr">binutils for AVR</h4>
 <p>On Ubuntu: <code>sudo apt install binutils-avr</code></p>
 <p>On MacOS: <code>brew tap osx-cross/avr &amp;&amp; brew install avr-binutils</code></p>
@@ -169,7 +169,7 @@ platform</p>
 <li><code>avr-objcopy --output-target=ihex ../../target/avr-attiny85/debug/trinket-simple-pwm.elf ../../target/avr-attiny85/debug/trinket-simple-pwm.hex</code></li>
 <li><code>micronucleus --timeout 60 --run --no-ansi ../../target/avr-attiny85/debug/trinket-simple-pwm.hex</code></li>
 <li>Plug in your Digispark. Once the application is uploaded, the LED will start
-pulsing</li>
+pulsing.</li>
 </ol>
 <p>I&rsquo;ve found that the Rust PWM example compiles to a much larger binary than the
 equivalent C code using Arduino libraries. (1265 bytes in Rust vs 888 bytes in
