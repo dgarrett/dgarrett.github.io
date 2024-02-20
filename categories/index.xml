@@ -6,6 +6,7 @@
     <description>Recent content in Categories on Dylan Garrett</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© {year} Dylan Garrett</copyright><atom:link href="https://dylan-garrett.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© {year} Dylan Garrett</copyright>
+    <atom:link href="https://dylan-garrett.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

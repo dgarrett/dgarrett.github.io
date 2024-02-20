@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>love2d on Dylan Garrett</title>
+    <title>Love2d on Dylan Garrett</title>
     <link>https://dylan-garrett.com/tags/love2d/</link>
-    <description>Recent content in love2d on Dylan Garrett</description>
+    <description>Recent content in Love2d on Dylan Garrett</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year} Dylan Garrett</copyright>
-    <lastBuildDate>Mon, 05 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://dylan-garrett.com/tags/love2d/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dylan-garrett.com/tags/love2d/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Doom Fire in LÖVE/lua</title>
       <link>https://dylan-garrett.com/blog/doom-fire-love2d/</link>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dylan-garrett.com/blog/doom-fire-love2d/</guid>
       <description>This weekend I read Fabien Sanglard&amp;rsquo;s post describing how the fire effect was implemented in Doom on the Playstation 1 and I figured this was a good chance to implement a small toy program in LÖVE. Here&amp;rsquo;s an iterative tutorial, written for beginners, to demonstrate implementing this effect using Lua in the LÖVE environment. If you&amp;rsquo;re already experienced with Lua or programming in general then go read Fabien&amp;rsquo;s post. It&amp;rsquo;s much more succinct.</description>
     </item>
-    
   </channel>
 </rss>

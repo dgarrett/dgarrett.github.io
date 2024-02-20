@@ -7,87 +7,70 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year} Dylan Garrett</copyright>
-    <lastBuildDate>Sun, 09 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dylan-garrett.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dylan-garrett.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>embedded</title>
+      <title>Embedded</title>
       <link>https://dylan-garrett.com/tags/embedded/</link>
       <pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dylan-garrett.com/tags/embedded/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>rust</title>
+      <title>Rust</title>
       <link>https://dylan-garrett.com/tags/rust/</link>
       <pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dylan-garrett.com/tags/rust/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>tutorial</title>
+      <title>Tutorial</title>
       <link>https://dylan-garrett.com/tags/tutorial/</link>
       <pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dylan-garrett.com/tags/tutorial/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>note-taking</title>
+      <title>Note-Taking</title>
       <link>https://dylan-garrett.com/tags/note-taking/</link>
       <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dylan-garrett.com/tags/note-taking/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>productivity</title>
+      <title>Productivity</title>
       <link>https://dylan-garrett.com/tags/productivity/</link>
       <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dylan-garrett.com/tags/productivity/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>calm-tech</title>
+      <title>Calm-Tech</title>
       <link>https://dylan-garrett.com/tags/calm-tech/</link>
       <pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dylan-garrett.com/tags/calm-tech/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>eink</title>
+      <title>Eink</title>
       <link>https://dylan-garrett.com/tags/eink/</link>
       <pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dylan-garrett.com/tags/eink/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>love2d</title>
+      <title>Love2d</title>
       <link>https://dylan-garrett.com/tags/love2d/</link>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dylan-garrett.com/tags/love2d/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>lua</title>
+      <title>Lua</title>
       <link>https://dylan-garrett.com/tags/lua/</link>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dylan-garrett.com/tags/lua/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

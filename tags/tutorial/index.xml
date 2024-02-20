@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tutorial on Dylan Garrett</title>
+    <title>Tutorial on Dylan Garrett</title>
     <link>https://dylan-garrett.com/tags/tutorial/</link>
-    <description>Recent content in tutorial on Dylan Garrett</description>
+    <description>Recent content in Tutorial on Dylan Garrett</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year} Dylan Garrett</copyright>
-    <lastBuildDate>Sun, 09 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dylan-garrett.com/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dylan-garrett.com/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rust on a Digispark ATtiny85</title>
       <link>https://dylan-garrett.com/blog/rust-digispark-attiny/</link>
       <pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dylan-garrett.com/blog/rust-digispark-attiny/</guid>
-      <description>The Digistump Digispark is a tiny, simple, and cheap development board using the ATtiny85 MCU. While the official version is no longer for sale, clones are easily found online for around $2 each.
-Rahix&amp;rsquo;s avr-hal already supports the ATtiny85 on the Adafruit Trinket board. The Trinket is nearly identical to the Digispark, but with a different USB bootloader, so avr-hal&amp;rsquo;s cargo run support won&amp;rsquo;t work. Instead, you&amp;rsquo;ll need to convert the output binary and deploy it with the micronucleus CLI tool.</description>
+      <description>The Digistump Digispark is a tiny, simple, and cheap development board using the ATtiny85 MCU. While the official version is no longer for sale, clones are easily found online for around $2 each.&#xA;Rahix&amp;rsquo;s avr-hal already supports the ATtiny85 on the Adafruit Trinket board. The Trinket is nearly identical to the Digispark, but with a different USB bootloader, so avr-hal&amp;rsquo;s cargo run support won&amp;rsquo;t work. Instead, you&amp;rsquo;ll need to convert the output binary and deploy it with the micronucleus CLI tool.</description>
     </item>
-    
     <item>
       <title>Doom Fire in LÖVE/lua</title>
       <link>https://dylan-garrett.com/blog/doom-fire-love2d/</link>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dylan-garrett.com/blog/doom-fire-love2d/</guid>
       <description>This weekend I read Fabien Sanglard&amp;rsquo;s post describing how the fire effect was implemented in Doom on the Playstation 1 and I figured this was a good chance to implement a small toy program in LÖVE. Here&amp;rsquo;s an iterative tutorial, written for beginners, to demonstrate implementing this effect using Lua in the LÖVE environment. If you&amp;rsquo;re already experienced with Lua or programming in general then go read Fabien&amp;rsquo;s post. It&amp;rsquo;s much more succinct.</description>
     </item>
-    
   </channel>
 </rss>
